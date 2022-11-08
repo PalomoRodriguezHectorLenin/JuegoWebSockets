@@ -1,4 +1,4 @@
-var socket = io('http://192.168.100.16:3000/');
+var socket = io('192.168.1.73:3000/');
 
 let message = document.getElementById('message');
 let username = document.getElementById('username');
