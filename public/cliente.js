@@ -1,4 +1,4 @@
-var socket = io('192.168.1.73:3000/');
+var socket = io('localhost:3000');
 
 let message = document.getElementById('message');
 let username = document.getElementById('username');
