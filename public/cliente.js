@@ -25,12 +25,6 @@ socket.on('chat:message', function(data){
 	</p>`
 });
 
-socket.on('chat:score', function(score){
-	actions.innerHTML = '';
-	output.innerHTML += `<p>
-	<strong>${data.username}</strong>: ${score}`
-});
-
 socket.on('chat:typing', function (data){
 	actions.innerHTML = `<p><en>${data} está escribiendo...</en></p>`
 });
