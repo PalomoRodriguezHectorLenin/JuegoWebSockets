@@ -40,7 +40,7 @@
 		</div>
 		
 		
-		<!-- Preloading image -->
+		<!-- Precargando la imagen -->
 		<img id="sprite" src="img/1 1 1.png"/>
 
 		<div id="scoreBoard">
@@ -50,11 +50,11 @@
 	</div>
 	<div id="chat-container">
 		<div id="chat-window">
+			<input type="text" id="username" placeholder="Insertar usuario">
 			<div id="output"></div>
 			<div id="actions"></div>
-		</div>
-		<input type="text" id="username" placeholder="Usuario">
-		<input type="text" id="message" placeholder="Mensaje">
+		</div>	
+		<input type="text" id="message" placeholder="Ingresar un mensaje">
 		<button class="boton1" id="send">Enviar mensaje</button>
 	</div>
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>

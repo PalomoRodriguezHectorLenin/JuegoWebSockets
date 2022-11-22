@@ -1,4 +1,4 @@
-var socket = io('https://juegowebsockets-production.up.railway.app/');
+var socket = io('https://juegowebsockets-production.up.railway.app/');//https://juegowebsockets-production.up.railway.app/
 
 let message = document.getElementById('message');
 let username = document.getElementById('username');
