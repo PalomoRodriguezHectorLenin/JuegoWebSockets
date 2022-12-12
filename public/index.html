@@ -1,71 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-  <link rel="stylesheet" href="./style.css">
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="./style.css">
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<title>Jump</title>
-	<link rel="icon" href="data:,">
-</head>
-<body>
-	<div class="container">
-		<canvas id="canvas">
-			
-		</canvas>
+	<!-- partial:index.partial.html -->
+	<!DOCTYPE HTML>
+	<html lang="en-US">
 
-		<div id="mainMenu">
-			<h1>Jump Man</h1>
+	<head>
+		<title>Jump</title>
+		<link rel="icon" href="data:,">
+	</head>
 
-			<p class="info">
-				usa <- -> para moverte
-			</p>
-			<a class="button" href="javascript:init()">Jugar</a>
+	<body>
+		<div class="container">
+			<canvas id="canvas">
+
+			</canvas>
+
+			<div id="mainMenu">
+				<h1>Jump Man</h1>
+
+				<p class="info">
+					usa <- -> para moverte
+				</p>
+				<a class="button" href="javascript:init()">Jugar</a>
+			</div>
+
+			<div id="gameOverMenu">
+				<h1>game over!</h1>
+				<br>
+				<br>
+				<h3 id="go_score">tu puntuación es</h3>
+
+				<a class="button" href="javascript:reset()">Reiniciar</a>
+
+			</div>
+
+
+			<!-- Precargando la imagen -->
+			<img id="sprite" src="img/1 1 1.png" />
+
+			<div id="scoreBoard">
+				<p id="score">0</p>
+			</div>
+
 		</div>
-		
-		<div id="gameOverMenu">
-			<h1>game over!</h1>
-			<br>
-			<br>
-			<h3 id="go_score">tu puntuación es</h3>
-
-			<a class="button" href="javascript:reset()">Reiniciar</a>
-
+		<div id="chat-container">
+			<div id="chat-window">
+				<input type="text" id="username" placeholder="Insertar usuario">
+				<div id="output"></div>
+				<div id="actions"></div>
+			</div>
+			<input type="text" id="message" placeholder="Ingresar un mensaje">
+			<button class="boton1" id="send">Enviar mensaje</button>
 		</div>
-		
-		
-		<!-- Precargando la imagen -->
-		<img id="sprite" src="img/1 1 1.png"/>
+		<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+		<script src="./script.js"></script>
+		<script src="./cliente.js"></script>
+	</body>
 
-		<div id="scoreBoard">
-			<p id="score">0</p>
-		</div>
-
-	</div>
-	<div id="chat-container">
-		<div id="chat-window">
-			<input type="text" id="username" placeholder="Insertar usuario">
-			<select name="channel" id="channel">
-				<option value="canalA">Chat A</option>
-				<option value="canalB">Chat B</option>
-			</select>
-			<div id="output"></div>
-			<div id="actions"></div>
-		</div>	
-		<input type="text" id="message" placeholder="Ingresar un mensaje">
-		<button class="boton1" id="send">Enviar mensaje</button>
-	</div>
-    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
-    <script  src="./script.js"></script>
-    <script src="./cliente.js"></script>
-</body>
-</html>
-
-
-
+	</html>

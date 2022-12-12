@@ -12,6 +12,7 @@ btn.addEventListener('click', function(){
 		message: message.value,
 		username: username.value
 	})
+	
 })
 
 message.addEventListener('keypress', function(){
@@ -23,6 +24,7 @@ socket.on('chat:message', function(data){
 	output.innerHTML += `<p> 
 		<strong>${data.username}</strong>: ${data.message}
 	</p>`
+	
 });
 
 socket.on('chat:typing', function (data){
@@ -30,9 +32,8 @@ socket.on('chat:typing', function (data){
 });
 
 socket.on('change channel', function(channel){
-	$("#chat:message").html('').append($('<li>').text('system: bienvenido al canal' + channel + '!'));
+	$("chat:message").html('').append($('<li>').text('system: bienvenido al canal' + channel + '!'));
+
+	
 });
 
-$("#channel").change(function(){
-	socket.emit('change channel', $("#channel").val());
-});

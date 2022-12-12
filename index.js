@@ -20,25 +20,21 @@ server.listen(app.get('port'), ()=>{
 const SocketIO = require('socket.io');
 const io = SocketIO(server);
 
+app.get('/', function(req, res){
+    res.sendFile(__dirname + 'index.htlm');
+})
+
 io.on('connection', (socket)=>{
-    console.log('new connection', socket.id);
+    console.log('Nueva conexión:', socket.id);
 
-    var channel = 'canalA';
-
-    socket.join(channel);
-
-    socket.on('change channel', function(newChannel){
-        socket.leave(channel);
-        socket.join(newChannel);
-        channel = newChannel;
-        socket.emit('change channel', newChannel)
-    })
-    
     socket.on('chat:message', (data)=>{
-        //io.sockets.emit('chat:message', data);
-        io.sockets.in(channel).emit('chat:message', data);
+        io.sockets.emit('chat:message', data);
     });
     socket.on('chat:typing', (data)=>{
         socket.broadcast.emit('chat:typing', data);
     });
+
+    socket.on('disconnect', function(){
+        console.log("Se desconecto: %s", socket.id);
+    })
 });
