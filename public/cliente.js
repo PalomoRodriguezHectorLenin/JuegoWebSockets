@@ -1,4 +1,4 @@
-var socket = io('localhost:3000');//https://juegowebsockets-production.up.railway.app/
+var socket = io('https://reprobetppcwazaa.up.railway.app/');//https://reprobetppcwazaa.up.railway.app/
 
 let message = document.getElementById('message');
 let username = document.getElementById('username');
@@ -29,11 +29,5 @@ socket.on('chat:message', function(data){
 
 socket.on('chat:typing', function (data){
 	actions.innerHTML = `<p><en>${data} está escribiendo...</en></p>`
-});
-
-socket.on('change channel', function(channel){
-	$("chat:message").html('').append($('<li>').text('system: bienvenido al canal' + channel + '!'));
-
-	
 });
 
